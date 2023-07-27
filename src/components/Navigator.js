@@ -14,7 +14,7 @@ class MenuGroup extends Component {
                 <div className="menu-group-name">
                     <FormattedMessage id={name} />
                 </div>
-                <ul className="menu-list list-unstyled">
+                             <ul className="menu-list list-unstyled">
                     {children}
                 </ul>
             </li>

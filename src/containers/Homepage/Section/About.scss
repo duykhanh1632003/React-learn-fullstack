@@ -1,0 +1,49 @@
+
+  
+  .section-title {
+	font-size: 24px;
+	font-weight: bold;
+	margin-bottom: 20px;
+	padding: 0 50px;
+	/* Thêm các thuộc tính CSS cho phần section-title nếu cần */
+  }
+  
+  .section-container {
+	display: flex;
+	height: 500px;
+	padding: 0 50px;
+  
+	.section-left {
+	  flex: 1;
+	  /* Thêm các thuộc tính CSS cho phần section-left nếu cần */
+  
+	  iframe {
+		width: 80%;
+		height: 70%;
+	  }
+	}
+  
+	.section-right {
+	  flex: 1;
+	  /* Thêm các thuộc tính CSS cho phần section-right nếu cần */
+  
+	  .section-list {
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
+  
+		li {
+		  margin-bottom: 10px;
+		  font-size: 20px;
+		  /* Thêm các thuộc tính CSS cho mỗi mục li nếu cần */
+  
+		  ul {
+			list-style-type: disc;
+			font-size: 30px;
+			/* Thêm các thuộc tính CSS cho mỗi mục ul nếu cần */
+		  }
+		}
+	  }
+	}
+  }
+  

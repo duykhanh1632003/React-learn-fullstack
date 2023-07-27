@@ -1,0 +1,109 @@
+.section-outstanding{
+	height: 400px;
+	background: white;
+	
+
+	.outstanding-container{
+		margin: 0 50px !important;
+		display: flex;
+		flex-direction: column;
+
+		.outstanding-header{
+			margin:20px 0;
+			height: 60px;
+			display: flex;
+			justify-content: space-between;
+			span{
+				font-size: 25px;
+				font-weight: 600;
+			}
+			button{
+				height: 35px !important;
+				width: 97px !important;
+				background: #ebebeb;
+				border: none;
+				color: #282e41;
+				&:hover{
+					background: #FFC419;
+					color: white;
+				}
+			}
+		}
+		.outstanding-body{
+			
+			.outstanding-content{
+				width: 250px;
+				height: 250px;
+				padding: 10px;
+				.img-customize{
+					width: 100%;
+					height: 100%;
+					display: flex;
+					flex-direction: column;
+					background-color: rgb(250, 250, 250);
+					border: 1px solid #eee;
+					
+					img{
+						margin: auto;
+						border-radius: 50%;
+						width: 120px; /* Điều chỉnh kích thước ảnh của bạn theo ý muốn */
+						height: 120px; /* Điều chỉnh kích thước ảnh của bạn theo ý muốn */
+						object-fit: cover;
+						margin-bottom: -10px;
+						// transform: translate(105%, 17%)
+						
+					}
+					.title-container{
+						margin: auto;
+						justify-content: center;
+						.namedoctor-title{
+							text-align: center;
+						}
+						.namedoctor-caption{
+							text-align: center;
+						}
+					}
+				}
+			}
+			
+			.slick-prev{
+				// position: relative !important;
+				left: -10px !important;
+				z-index: 1000;
+				height: 48px !important;
+				width: 44px !important;
+				background: #fff !important;
+				border: 2px solid #d7d7d7 !important;
+			
+				&:hover{
+					background: #eceace !important;
+				}
+			}
+			
+			.slick-prev::before ,.slick-next::before{
+				font-family:"Font Awesome 5 Free"  !important;
+				color: red !important;
+				// content: "\e257" !important;
+			}
+			
+			.slick-next{
+				right : -10px !important;
+				z-index: 1000;
+				height: 48px !important;
+				width: 44px !important;
+				background: #fff !important;
+				border: 2px solid #d7d7d7 !important;
+			
+				&:hover{
+					background: #eceace !important;
+				}
+			}
+		}
+		
+	}
+	
+
+}
+
+//reset slick slider css
+

@@ -4,10 +4,35 @@
     z-index: 99;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     background-color: $colormain;
     color: $common-text-color;
     height: 40px;
     position: relative;
+
+    .languages {
+        display: flex;
+        align-items: center;
+        margin-right: 40px;
+        .welcome{
+            margin-right: 10px;
+        } // Di chuyển nút ngôn ngữ sang góc bên phải và cách mép phải 40px
+        .language-vi,
+        .language-en {
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 4px;
+            font-weight: bold;
+            &.active {
+                background-color: $colormain;
+                color: rgb(205, 164, 50);
+            }
+            &:hover {
+                background-color: darken($colormain, 5);
+            }
+        }
+    }
+
     .btn-logout {
         color: $common-text-color;
         line-height: 40px;

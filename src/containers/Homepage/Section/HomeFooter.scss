@@ -1,0 +1,38 @@
+.section-footer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #64b9e5;
+	padding: 10px 20px;
+	color: #fff; /* Đổi màu chữ thành màu trắng */
+	font-size: 14px;
+	font-family: Arial, sans-serif;
+	height: 100px;
+
+  
+	.logo {
+	  i {
+		font-size: 24px;
+		margin-right: 10px;
+		cursor: pointer;
+		transition: color 0.3s ease;
+  
+		&:hover {
+		  color: #51ce51; /* Màu xanh dương tương ứng với Facebook */
+		}
+  
+		&.fab.fa-youtube {
+		  color: #ff0000; /* Màu đỏ tương ứng với YouTube */
+		}
+  
+		&.fab.fa-facebook {
+		  color: #123dcc; /* Màu xanh nước biển tương ứng với Facebook */
+		}
+	  }
+  
+	  i:last-child {
+		margin-right: 0;
+	  }
+	}
+  }
+  

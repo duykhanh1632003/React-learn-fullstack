@@ -1,0 +1,157 @@
+#customers {
+	font-family: Arial, Helvetica, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
+  }
+  
+  #customers td, #customers th {
+	border: 1px solid #ddd;
+	padding: 8px;
+  }
+  
+  #customers tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #customers tr:hover {background-color: #ddd;}
+  
+  #customers th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: left;
+	background-color: #04AA6D;
+	color: white;
+  }
+  #customers {
+	font-family: Arial, Helvetica, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
+  
+	td,
+	th {
+	  border: 1px solid #ddd;
+	  padding: 8px;
+	}
+  
+	tr:nth-child(even) {
+	  background-color: #f2f2f2;
+	}
+  
+	tr:hover {
+	  background-color: #ddd;
+	}
+  
+	th {
+	  padding-top: 12px;
+	  padding-bottom: 12px;
+	  text-align: left;
+	  background-color: #04AA6D;
+	  color: white;
+	}
+  
+	.btn-edit,
+	.btn-delete {
+	  background-color: #eef76a;
+	  border: none;
+	  cursor: pointer;
+	  padding: 0.5rem;
+	  transition: background-color 0.3s ease;
+	  margin-left: 15px;
+  
+	  &:hover {
+		background-color: #999;
+	  }
+  
+	  i {
+		font-size: 1.5rem;
+		transition: color 0.3s ease;
+	  }
+	}
+  
+	.btn-edit {
+	  i {
+		color: blue;
+  
+		&:hover {
+		  color: darkblue;
+		}
+	  }
+	}
+  
+	.btn-delete {
+	  i {
+		color: red;
+  
+		&:hover {
+		  color: darkred;
+		}
+	  }
+	}
+  }
+  
+
+  .modal-user-container {
+	font-family: Arial, sans-serif;
+  
+	.container {
+	  padding: 20px;
+	}
+  
+	.form-group {
+	  margin-bottom: 20px;
+	}
+  
+	label {
+	  display: block;
+	  margin-bottom: 5px;
+	  font-weight: bold;
+	}
+  
+	input[type="text"],
+	input[type="password"] {
+	  width: 100%;
+	  padding: 10px;
+	  border: 1px solid #ccc;
+	  border-radius: 4px;
+	  transition: border-color 0.3s ease;
+  
+	  &:focus {
+		outline: none;
+		border-color: #007bff;
+	  }
+	}
+  
+	.modal-footer {
+	  .btn-primary {
+		background-color: #007bff;
+		border-color: #007bff;
+		color: #fff;
+		transition: background-color 0.3s ease;
+  
+		&:hover {
+		  background-color: #0056b3;
+		  border-color: #0056b3;
+		}
+	  }
+  
+	  .btn-secondary {
+		background-color: #6c757d;
+		border-color: #6c757d;
+		color: #fff;
+		transition: background-color 0.3s ease;
+  
+		&:hover {
+		  background-color: #545b62;
+		  border-color: #545b62;
+		}
+	  }
+  
+	  .btn {
+		margin-right: 10px;
+		height: 35px;
+		padding: 0 20px 0 20px;
+		&:last-child {
+		  margin-right: 0;
+		}
+	  }
+	}
+  }
+  
