@@ -1,0 +1,98 @@
+
+$primaryColor: #007bff; // Define primary color as a variable
+
+.manage-doctor-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.manage-doctor-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: $primaryColor;
+  margin-bottom: 20px;
+}
+
+.more-infor {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 20px;
+
+  .content-left {
+    flex: 1;
+    margin-right: 10px;
+
+    label {
+      font-weight: bold;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 100px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+  }
+
+  .content-right {
+    flex: 1;
+    margin-left: 10px;
+
+    label {
+      font-weight: bold;
+    }
+
+    .react-select-container {
+      width: 100%;
+    }
+  }
+}
+
+.manage-doctor-editor {
+  background-color: #f5f5f5;
+  padding: 20px;
+  width: 100%;
+  max-width: 1200px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  margin-bottom: 20px;
+
+  // Style the editor toolbar
+  .rc-md-editor-toolbar {
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #ccc;
+    padding: 5px;
+  }
+
+  // Style the editor textarea
+  .rc-md-editor {
+    textarea {
+      min-height: 300px;
+      font-size: 16px;
+      line-height: 1.6;
+      border: none;
+      outline: none;
+      width: 100%;
+    }
+  }
+}
+
+.save-content-doctor {
+  background-color: $primaryColor;
+  color: #fff;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+
+  // Add hover effect
+  &:hover {
+    background-color: darken($primaryColor, 10%);
+  }
+}

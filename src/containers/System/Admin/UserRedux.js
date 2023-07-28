@@ -84,15 +84,17 @@ class UserRedux extends Component {
                 lastName: '',
                 phoneNumber: '',
                 address: '',
-                gender: arrGenders && arrGenders.length >0 ? arrGenders[0].key : '',
-                position: arrPositions && arrPositions.length >0 ? arrPositions[0].key : '',
-                role: arrRoles && arrRoles.length >0 ? arrRoles[0].key : '',
+                gender: arrGenders && arrGenders.length >0 ? arrGenders[0].keyMap : '',
+                position: arrPositions && arrPositions.length >0 ? arrPositions[0].keyMap : '',
+                role: arrRoles && arrRoles.length >0 ? arrRoles[0].keyMap : '',
                 avatar: '',
                 action: CRUD_ACTIONS.CREATE,
                 previewImageUrl: ''
             })
         }
     }
+
+    
 
     handleOnchangImage = async (event) =>{
         let data = event.target.files;
@@ -106,7 +108,7 @@ class UserRedux extends Component {
                 avatar: base64
             })
         }
-    }
+    } 
     
 
     openPreviewImage = () =>{   
@@ -119,25 +121,23 @@ class UserRedux extends Component {
     }
 
     handleSaveUser = (event) => {
-        event.preventDefault(); // Add this line to prevent form submission
+        event.preventDefault();
         let isValid = this.checkValiDateInput();
-        let { action} = this.state
+        let { action } = this.state;
         if (isValid === false) return;
-        if(action === CRUD_ACTIONS.CREATE){
-            this.props.createNewUser({
-                email: this.state.email,
-                password: this.state.password,
-                firstName: this.state.firstName,
-                lastName: this.state.lastName,
-                address: this.state.address,
-                phonenumber: this.state.phoneNumber,
-                gender: this.state.gender,
-                roleId: this.state.role,
-                positionId: this.state.position,
-                avatar: this.state.avatar,
-                
-              });
-              
+        if (action === CRUD_ACTIONS.CREATE) {
+          this.props.createNewUser({
+            email: this.state.email,
+            password: this.state.password,
+            firstName: this.state.firstName,
+            lastName: this.state.lastName,
+            address: this.state.address,
+            phonenumber: this.state.phoneNumber,
+            gender: this.state.gender,
+            roleId: this.state.role,
+            positionId: this.state.position,
+            avatar: this.state.avatar,
+          });
               // this.props.fetchUserRedux()
             }
             else{
@@ -175,9 +175,9 @@ class UserRedux extends Component {
 
     onChangeInput = (event , id) =>{
         let copySate = {...this.state}
-
         copySate[id] = event.target.value
-        console.log('check copystate',copySate)
+        console.log("check copy stae", copySate)
+
         this.setState({
             ...copySate
         }, )
@@ -210,7 +210,7 @@ class UserRedux extends Component {
           position: user.positionId, // Thay đổi "position" thành "positionId"
           role: user.roleId, // Thay đổi "role" thành "roleId"
           previewImageUrl: imageBase64,
-          avatar: imageBase64,
+          avatar: '',
           action: CRUD_ACTIONS.EDIT,
           userEditId: user.id
         });

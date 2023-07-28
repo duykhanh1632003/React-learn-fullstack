@@ -86,4 +86,9 @@
         "signin":"Sign in",
         "edit": "Save changes"
         }
+        ,
+    "homepage":{
+        "oustaindingDoctor":"Outstanding Doctor of the Week",
+        "watchmore":"See more"
+    }
 }

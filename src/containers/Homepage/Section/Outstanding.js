@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './Outstanding.scss';
+import { FormattedMessage } from 'react-intl';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import * as action from "../../../store/actions"
-import { LANGUAGES } from '../../../utils';
+import { LANGUAGES  } from '../../../utils';
+import { withRouter } from 'react-router';
+
 
 
 class Outstanding extends Component {
@@ -29,6 +32,10 @@ class Outstanding extends Component {
 		
 	}
 
+	handleDetailDoctor = (doctor) =>{
+		this.props.history.push(`/detail-doctor/${doctor.id}`)
+	}
+
 
     render() {
         let settings = {
@@ -46,8 +53,8 @@ class Outstanding extends Component {
             <div className='section-outstanding'>
                 <div className='outstanding-container'>
                     <div className='outstanding-header'>
-                        <span>Bác sĩ nổi bật tuần qua</span>
-                        <button>Xem thêm</button>
+                        <span><FormattedMessage id="homepage.oustaindingDoctor"/></span>
+                        <button><FormattedMessage  id= "homepage.watchmore"/></button>
                     </div>
                     <div className='outstanding-body'>
                         <Slider {...settings}>
@@ -61,7 +68,7 @@ class Outstanding extends Component {
 								let nameVi = `${item.positionData.valueVi}, ${item.firstName} ${item.lastName}`;
 								let nameEn = `${item.positionData.valueEn}, ${item.firstName} ${item.lastName}`;
 								return(
-									<div className='outstanding-content' key={index}>
+									<div className='outstanding-content' key={index} onClick={() => this.handleDetailDoctor(item)}>
 										<div className='img-customize'>                     
 										<img src={imageBase64} />
 											<div className='title-container'>
@@ -96,4 +103,4 @@ const mapDispatchToProps = dispatch => {
 	};
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Outstanding);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Outstanding));

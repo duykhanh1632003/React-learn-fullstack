@@ -1,5 +1,5 @@
 import actionTypes from './actionTypes';
-import { getAllCodeService, createNewUserSerVice, getAllUsers , deleteUserService , editUserService,  getTopDoctorHomeService} from '../../services/userService';
+import { getAllCodeService, createNewUserSerVice, getAllUsers , deleteUserService , editUserService,  getTopDoctorHomeService , getAllDoctors , saveDetailDoctorService} from '../../services/userService';
 import { ToastContainer, toast } from 'react-toastify';
 
 
@@ -113,7 +113,6 @@ export const fetchGPositionFailed = () => ({
 export const createNewUser = (data) => {
     return async  (dispatch , getState) => {
         try{
-
             let res = await createNewUserSerVice(data)
             toast.success("Create a new User Succeed!")
             if(res && res.errCode ===0 ){
@@ -257,6 +256,58 @@ export const fetchTopDoctor = () =>{
         }
         catch(e){
             
+        }
+    }
+}
+
+export const fetchAllDoctor = () =>{
+    return async  (dispatch , getState) => {
+        try{
+            let res = await getAllDoctors()
+            if(res && res.errCode === 0 ){
+                dispatch({
+                type: actionTypes.FETCH_ALL_DOCTORS_SUCCESS,
+                dataAllDoctors: res.data
+            })}
+            else{
+                dispatch({
+                    type: actionTypes.FETCH_ALL_DOCTORS_FAILED
+                })
+            }
+        }
+        catch(e){
+            dispatch({
+                type: actionTypes.FETCH_ALL_DOCTORS_FAILED
+            })
+        }
+    }
+}
+
+
+
+export const saveDetailDoctor = (data) =>{
+    return async  (dispatch , getState) => {
+        try{
+            let res = await saveDetailDoctorService(data)
+            if(res && res.errCode === 0 ){
+                toast.success("Save user User Succeed!");
+                dispatch({
+                type: actionTypes.SAVE_DETAIL_DOCTOR_SUCCESS,
+                dataAllDoctors: res.data
+            })}
+            else{
+                toast.error("Wrong!");
+                dispatch({
+                    
+                    type: actionTypes.SAVE_DETAIL_DOCTOR_FAILED
+                })
+            }
+        }
+        catch(e){
+            toast.error("Wrong!");
+            dispatch({
+                type: actionTypes.SAVE_DETAIL_DOCTOR_FAILED
+            })
         }
     }
 }

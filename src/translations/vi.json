@@ -84,5 +84,9 @@
         "avatar":"Ảnh đại diện",
         "signin":"Đăng ký",
         "edit": "Lưu thay đổi"
+    },
+    "homepage":{
+        "oustaindingDoctor":"Bác sỹ nổi bật tuần qua",
+        "watchmore":"Xem thêm"
     }
 }
