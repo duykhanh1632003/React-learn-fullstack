@@ -12,6 +12,9 @@ class UserRedux extends Component {
 
     constructor(props){
         super(props)
+        let arrGenders = this.props.genderRedux
+            let arrRoles = this.props.roleRedux
+            let arrPositions = this.props.rolePosition
         this.state = {
             genderArr: [],
             roleArr: [],
@@ -25,9 +28,9 @@ class UserRedux extends Component {
             lastName: '',
             phoneNumber: '',
             address: '',
-            gender:'',
-            position: '',
-            role: '',
+            gender: arrGenders && arrGenders.length >0 ? arrGenders[0].keyMap : '',
+            position: arrPositions && arrPositions.length >0 ? arrPositions[0].keyMap : '',
+            role: arrRoles && arrRoles.length >0 ? arrRoles[0].keyMap : '',
             avatar: '',
 
             action: '',

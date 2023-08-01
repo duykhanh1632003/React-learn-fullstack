@@ -1,0 +1,85 @@
+// Import thư viện font-awesome cho icon
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+
+// Định nghĩa các biến màu sắc
+$primary-color: #00a8e8; // Màu xanh nước biển
+$button-width: 120px;
+$button-height: 50px;
+$button-margin: 10px;
+$button-color: #fff04b; // Màu vàng mới
+
+// Định nghĩa lớp cho container chính
+.doctor-schedule-container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+
+  // Định nghĩa lớp cho phần lịch khám
+  .all-schedule {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+
+    label {
+      font-size: 16px;
+      margin-right: 10px;
+      cursor: pointer;
+    }
+
+    select {
+      border: 1px solid $primary-color;
+	  border-radius: 15px;
+      padding: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      outline: none;
+    }
+  }
+
+  // Định nghĩa lớp cho phần thời gian khám
+  .all-available-time {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    // Định nghĩa lớp cho phần tiêu đề "Lịch khám"
+    .text-calendar {
+      span {
+        font-size: 18px;
+        color: $primary-color;
+        i {
+          margin-right: 5px;
+        }
+      }
+    }
+
+    // Định nghĩa lớp cho nội dung thời gian khám
+    .time-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+
+      // Định nghĩa lớp cho các nút thời gian
+      button {
+        width: $button-width;
+        height: $button-height;
+        margin: $button-margin;
+        background-color: $button-color; // Thay đổi màu nền của button
+        color: black;
+        border: none;
+        cursor: pointer;
+        font-size: 14px;
+        transition: background-color 0.2s;
+		border-radius: 5px;
+
+        &:hover {
+          background-color: darken($button-color, 10%);
+          border: #00a8e8 solid ;
+        }
+      }
+      .book-free{
+        padding: 0 10px;
+      }
+    }
+  }
+}

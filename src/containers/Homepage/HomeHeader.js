@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './HomeHeader.scss'
 import { FormattedMessage } from 'react-intl';
+import { withRouter } from 'react-router-dom/cjs/react-router-dom.min';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { LANGUAGES } from '../../utils';
 import { changeLanguageApp } from '../../store/actions';
@@ -12,6 +13,12 @@ class HomeHeader extends Component {
         //fire redux event : action
         this.props.changeLanguageAppRedux(language)
     }
+
+    returnToHome = () =>{
+        if(this.props.history){
+            this.props.history.push(`/home`)
+        }
+    }
     render() {
         let language = this.props.language;
         return (
@@ -21,7 +28,7 @@ class HomeHeader extends Component {
                 <div className='home-header-content'>
                     <div className='left-content'>
                         <i className='fas fa-bars'></i>
-                        <img className='header-logo' src='https://bookingcare.vn/assets/icon/bookingcare-2020.svg' />
+                        <img className='header-logo' src='https://bookingcare.vn/assets/icon/bookingcare-2020.svg'onClick={() => this.returnToHome()} />
                     </div>
                     <div className='center-content'>
                         <div className='child-content'>
@@ -51,7 +58,8 @@ class HomeHeader extends Component {
                     </div>
                 </div>
             </div>
-            <div className='home-header-banner'>
+            {this.props.isShowBanner === true && 
+                <div className='home-header-banner'>
                 <div className='content-up'>
                     <div className='title1'><FormattedMessage id="homeheader.content-up-title1" /></div>
                     <div className='title2'><FormattedMessage id="homeheader.content-up-title2" /></div>
@@ -123,6 +131,8 @@ class HomeHeader extends Component {
                     </div>
                     </div>
                 </div>
+            }
+            
                 
             </React.Fragment>
         );
@@ -143,4 +153,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(HomeHeader);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(HomeHeader));

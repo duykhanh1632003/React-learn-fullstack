@@ -1,0 +1,64 @@
+.manage-schedule-container {
+    // Thêm padding cho container
+    padding: 20px;
+
+    .m-s-title {
+        text-transform: uppercase;
+        text-align: center;
+        font-weight: 600;
+        color: aqua;
+        font-size: 25px;
+        margin: 30px 0;
+    }
+
+    .form-group {
+        // Thêm margin giữa các form-group
+        margin-bottom: 20px;
+    }
+
+    .pick-hour-container {
+        height: 150px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+
+        .btn {
+            /* ... (existing styles) */
+        
+            // Thêm các kiểu CSS cho nút trong container
+            background-color: #007bff;
+            color: white;
+            border: none;
+            margin: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.2s;
+        
+            &:hover {
+              background-color: #0056b3;
+            }
+        
+            &.active {
+              background-color: #ff4500;
+            }
+        }
+    }
+
+    button {
+        // Thêm kiểu CSS cho nút "Lưu thông tin"
+        background-color: #b924b9;
+        color: white;
+        border: none;
+        margin-top: 20px;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.2s;
+
+        &:hover {
+            background-color: #891389;
+        }
+    }
+}

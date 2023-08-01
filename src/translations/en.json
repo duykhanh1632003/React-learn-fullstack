@@ -68,6 +68,10 @@
             "manage-specialty": "Specialty Management",
             "handbook": "Post",
             "manage-handbook": "Post Management"
+        },
+        "doctor":{
+            "manage-schedule": "Manage medical examination plan",
+            "manage-user": "Manage user"
         }
         
     },
@@ -90,5 +94,34 @@
     "homepage":{
         "oustaindingDoctor":"Outstanding Doctor of the Week",
         "watchmore":"See more"
+    },
+    "manage-schedule":{
+        "title": "Manage doctor's examination plan",
+        "choose-doctor": "Select a doctor",
+        "choose-day": "Select a date",
+        "save-infor":"Save information"
+    },
+    "patient" :{
+        "detail-doctor":{
+            "schedule":"examination schedule",
+            "error":"There are no appointments during this time. Please choose another calendar",
+            "choose": "Select ",
+            "put": "and schedule (for free)"
+        }
+    },
+    "admin": {
+        "manage-doctor": {
+        "title": "Create additional Doctor information",
+        "select": "Select a doctor",
+        "recommend": "Introduction information",
+        "price": "Price for medical examination",
+        "payment": "Select payment method",
+        "province": "Select province",
+        "room": "Clinic name",
+        "address": "Clinic address",
+        "note": "Note",
+        "save-info": "Save Information",
+        "create-info": "Create Information"
+        }
     }
 }
